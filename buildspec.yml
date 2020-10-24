@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 12
+
+  pre_build:
+    commands:
+      - echo Front PreBuild Starts On `date`
+      - npm install
+
+  build:
+    commands:
+      - echo Front Build Starts On `date`
+      - npm run build
+      
+
+artifacts:
+  files: [ '**/*' ]
+  base-directory: build
