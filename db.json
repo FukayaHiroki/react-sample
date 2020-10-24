@@ -4,7 +4,7 @@
       "id": 1,
       "title": "ご飯",
       "description": "めっちゃ美味しい",
-      "price": 300,
+      "price": "500",
       "imagePath": "http://52.193.131.7/homecook/search/recipe/img/00005991.jpg"
     },
     {

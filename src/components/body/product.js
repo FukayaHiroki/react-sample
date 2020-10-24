@@ -2,6 +2,7 @@ import { Button, TableCell, TableRow } from '@material-ui/core';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
 const Product = ({ id, title, description, price }) => {
   return (
     <>
@@ -24,6 +25,7 @@ const Product = ({ id, title, description, price }) => {
   );
 };
 
+// style
 const StyledTableCell = styled(TableCell)`
     backgroundcolor: theme.palette.common.black,
     color: theme.palette.common.white,

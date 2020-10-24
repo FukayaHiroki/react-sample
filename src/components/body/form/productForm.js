@@ -2,6 +2,7 @@ import { Box } from '@material-ui/core';
 import React, { Component } from 'react';
 import { Field } from 'redux-form';
 import RenderField from './renderField';
+
 class ProductForm extends Component {
   render() {
     return (

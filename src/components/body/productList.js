@@ -7,7 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import AddIcon from '@material-ui/icons/Add';
-import lodash from 'lodash';
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -30,7 +30,7 @@ class ProductList extends Component {
   }
 
   renderProducts() {
-    return lodash.map(this.props.productList, product => (
+    return _.map(this.props.productList, (product) => (
       <Product
         key={product.id}
         id={product.id}
@@ -43,7 +43,7 @@ class ProductList extends Component {
   }
 
   render() {
-    const StyledTableCell = withStyles(theme => ({
+    const StyledTableCell = withStyles((theme) => ({
       head: {
         backgroundColor: theme.palette.common.black,
         color: theme.palette.common.white,
@@ -88,7 +88,7 @@ class ProductList extends Component {
   }
 }
 
-const mapStateToProps = state => ({ productList: state.products });
+const mapStateToProps = (state) => ({ productList: state.products });
 
 const mapDispatchToProps = { readProducts };
 

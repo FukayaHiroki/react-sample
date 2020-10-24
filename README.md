@@ -1,24 +1,25 @@
-# フロントエンド課題1-2「Reactを使ったSPAの作成」：ダミーデータで実装
+# フロントエンド課題
+
 ## 使用技術
-| feature          | version |                     
-|:-:|:-:|
-|node.js|v12.13|
-|react|v16.11|
-|yarn|v1.19|
-|create-react-app|v3.2|
-|redux|v4.0|
-|redux-thunk|v2.3|
-|redux-form|v8.2|
-|@materiai-ui/styles|v4.6|
-|@material-ui/icons|v4.5|
-|@material-ui/core|v4.6|
-|axios|v0.19|
-|react-router|v5.1|
-   
+
+|       feature       | version |
+| :-----------------: | :-----: |
+|       node.js       | v12.13  |
+|        react        | v16.11  |
+|        yarn         |  v1.19  |
+|  create-react-app   |  v3.2   |
+|        redux        |  v4.0   |
+|     redux-thunk     |  v2.3   |
+|     redux-form      |  v8.2   |
+| @materiai-ui/styles |  v4.6   |
+| @material-ui/icons  |  v4.5   |
+|  @material-ui/core  |  v4.6   |
+|        axios        |  v0.19  |
+|    react-router     |  v5.1   |
 
 ## 環境構築手順
 
-#### node.jsの導入
+#### node.js の導入
 
 ```
 # nodebrewのinstall
@@ -33,9 +34,10 @@ nodebrew install v12.13.0
 nodebrew use v12.13.0
 
 ```
-#### yarnのinstall
 
-``` 
+#### yarn の install
+
+```
 # node.jsを除いてinstall
 brew install yarn --ignore-dependencies
 
@@ -47,5 +49,13 @@ yarn install
 
 # server起動
 yarn start
+
+```
+
+#### モックサーバーの起動方法
+
+```
+起動コマンド
+yarn json-server
 
 ```

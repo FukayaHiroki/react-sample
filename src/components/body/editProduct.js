@@ -19,12 +19,17 @@ class EditProduct extends Component {
     super(props);
     this.onDeleteClick = this.onDeleteClick.bind(this);
   }
-
+  // ライフサイクル
   componentDidMount() {
     const { id } = this.props.match.params;
     if (id) this.props.getProduct(id);
   }
-  onSubmit = async values => {
+
+  /**
+   * 完了ボタンを押下した際の処理
+   * @param values
+   */
+  onSubmit = async (values) => {
     await this.props.updateProduct(values);
     this.props.history.push('/');
   };
@@ -68,6 +73,7 @@ const mapStateToProps = (state, ownProps) => {
   return { initialValues: product, product };
 };
 
+// style
 const ButtonBox = styled(Box)`
   margin: 20px auto 0;
 `;
@@ -80,6 +86,7 @@ const DeleteButton = styled(Button)`
   margin: 10px;
   font-size: 20px;
 `;
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps

@@ -47,6 +47,7 @@ class SearchForm extends Component {
 }
 const mapDispatchToProps = { searchProducts };
 
+// style
 const StyledSearchForm = styled.form`
   margin: 0 0 0 auto;
 `;

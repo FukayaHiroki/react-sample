@@ -1,8 +1,9 @@
 import { Box } from '@material-ui/core';
 import React, { Component } from 'react';
 import { Field } from 'redux-form';
+
 class ImageForm extends Component {
-  fileUpload = field => {
+  fileUpload = (field) => {
     const { input, type, value, accept = '*', required = false, name } = field;
 
     return (

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import styled from 'styled-components';
 import * as productAction from '../../actions';
+
 function Login() {
   const REACT_APP_GITHUB_LOGIN_URL = process.env.REACT_APP_GITHUB_LOGIN_URL;
 
@@ -24,6 +25,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
+// style
 const StyledFab = styled(Button)`
   background-color: #b1cbbb;
   margin-left: 20px;

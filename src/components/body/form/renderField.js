@@ -1,7 +1,8 @@
 import { Box, TextField } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
-const RenderFiled = field => {
+
+const RenderFiled = (field) => {
   const {
     input,
     label,
@@ -22,6 +23,7 @@ const RenderFiled = field => {
     </Box>
   );
 };
+
 const StyledTextField = styled(TextField)`
   width: 300px;
   margin-top: 40px;

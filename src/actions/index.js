@@ -12,9 +12,19 @@ export const ERROR = 'ERROR';
 export const PATCH_IMAGE = 'PATCH_IMAGE';
 export const GET_IMAGE = 'GET_IMAGE';
 
+/**
+ * APIリクエストのベースURL
+ */
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL;
 
+/**
+ * クッキーから取得したAPIToken
+ */
 const apiToken = Cookie.get('authenticationApiToken');
+
+/**
+ * axiosのベースリクエスト
+ */
 const axiosBase = axios.create({
   baseURL: `${REACT_APP_API_URL}`,
   withCredentials: false,
@@ -23,6 +33,10 @@ const axiosBase = axios.create({
     Authorization: `Bearer ${apiToken}`,
   },
 });
+
+/**
+ * 修正系のリクエスト(画像データ込)
+ */
 const patchAxiosBase = axios.create({
   baseURL: `${REACT_APP_API_URL}`,
   withCredentials: false,
@@ -32,6 +46,9 @@ const patchAxiosBase = axios.create({
   },
 });
 
+/**
+ * 画像関連のリクエスト
+ */
 const imageAxiosBase = axios.create({
   baseURL: `${REACT_APP_API_URL}`,
   withCredentials: false,
@@ -40,6 +57,10 @@ const imageAxiosBase = axios.create({
     Authorization: `Bearer ${apiToken}`,
   },
 });
+
+/**
+ * エラー情報
+ */
 const errorHandle = (e, dispatch) => {
   if (!e.response) {
     const status = '500';
@@ -51,7 +72,11 @@ const errorHandle = (e, dispatch) => {
   }
 };
 
-export const readProducts = () => async dispatch => {
+/**
+ * 商品情報取得API(全件)
+ * @param values
+ */
+export const readProducts = () => async (dispatch) => {
   try {
     const response = await axiosBase.get('/');
     dispatch({ type: READ_PRODUCTS, response });
@@ -60,7 +85,11 @@ export const readProducts = () => async dispatch => {
   }
 };
 
-export const getImage = product => async dispatch => {
+/**
+ * 画像取得API
+ * @param values
+ */
+export const getImage = (product) => async (dispatch) => {
   try {
     const response = await imageAxiosBase({
       method: 'GET',
@@ -73,7 +102,11 @@ export const getImage = product => async dispatch => {
   }
 };
 
-export const createProduct = values => async dispatch => {
+/**
+ * 商品情報登録API
+ * @param values
+ */
+export const createProduct = (values) => async (dispatch) => {
   try {
     const response = await axiosBase({
       method: 'POST',
@@ -85,7 +118,11 @@ export const createProduct = values => async dispatch => {
   }
 };
 
-export const deleteProduct = id => async dispatch => {
+/**
+ * 商品情報削除API
+ * @param values
+ */
+export const deleteProduct = (id) => async (dispatch) => {
   try {
     await axiosBase({
       method: 'delete',
@@ -97,7 +134,11 @@ export const deleteProduct = id => async dispatch => {
   }
 };
 
-export const getProduct = id => async dispatch => {
+/**
+ * 商品情報取得API
+ * @param values
+ */
+export const getProduct = (id) => async (dispatch) => {
   try {
     const response = await axiosBase({
       method: 'get',
@@ -109,7 +150,11 @@ export const getProduct = id => async dispatch => {
   }
 };
 
-export const updateProduct = values => async dispatch => {
+/**
+ * 商品情報編集API
+ * @param values
+ */
+export const updateProduct = (values) => async (dispatch) => {
   try {
     const response = await axiosBase({
       method: 'put',
@@ -122,7 +167,11 @@ export const updateProduct = values => async dispatch => {
   }
 };
 
-export const searchProducts = value => async dispatch => {
+/**
+ * 商品情報検索API
+ * @param values
+ */
+export const searchProducts = (value) => async (dispatch) => {
   try {
     const keyword = value.keyword || '';
     const response = await axiosBase({
@@ -135,7 +184,11 @@ export const searchProducts = value => async dispatch => {
   }
 };
 
-export const patchImage = values => async dispatch => {
+/**
+ * 画像編集API
+ * @param values
+ */
+export const patchImage = (values) => async (dispatch) => {
   try {
     const params = new FormData();
     params.append('imagePath', values.imagePath[0]);

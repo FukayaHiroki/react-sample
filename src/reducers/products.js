@@ -1,4 +1,4 @@
-import lodash from 'lodash';
+import _ from 'lodash';
 import {
   CREATE_PRODUCT,
   DELETE_PRODUCT,
@@ -18,7 +18,7 @@ export default (state = initialState, action) => {
     case READ_PRODUCTS:
     case SEARCH_PRODUCTS:
     case PATCH_IMAGE:
-      return lodash.mapKeys(action.response.data, 'id');
+      return _.mapKeys(action.response.data, 'id');
     case CREATE_PRODUCT:
     case UPDATE_PRODUCT:
     case GET_PRODUCT:

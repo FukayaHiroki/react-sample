@@ -9,12 +9,13 @@ import ImageForm from './form/imageForm';
 import SubmitButton from './form/submitButton';
 
 class PatchImage extends Component {
+  // ライフサイクル
   componentDidMount() {
     const { id } = this.props.match.params;
     if (id) this.props.getProduct(id);
   }
 
-  onSubmit = async values => {
+  onSubmit = async (values) => {
     await this.props.patchImage(values);
     this.props.history.push('/');
   };

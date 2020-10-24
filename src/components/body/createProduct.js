@@ -10,7 +10,11 @@ import ProductForm from './form/productForm';
 import SubmitButton from './form/submitButton';
 
 class CreateProduct extends Component {
-  onSubmit = async values => {
+  /**
+   * 完了のボタンを押下したさいの処理
+   * @param values 商品情報
+   */
+  onSubmit = async (values) => {
     await this.props.createProduct(values);
     this.props.history.push('/');
   };
@@ -40,6 +44,7 @@ const CancelButton = styled(Button)`
   margin: 10px;
   font-size: 20px;
 `;
+
 export default connect(
   null,
   mapDispatchToProps

@@ -5,6 +5,7 @@ import EditProduct from '../components/body/editProduct';
 import ErrorPage from '../components/body/errorPage';
 import PatchImage from '../components/body/patchImage';
 import ProductList from '../components/body/productList';
+
 const body = () => {
   return (
     <BrowserRouter>

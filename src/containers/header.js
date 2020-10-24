@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LoginButton from '../components/header/loginButton';
 import SearchForm from '../components/header/searchForm';
+
 export default function SearchAppBar() {
   return (
     <StyledBox>
@@ -17,6 +18,7 @@ export default function SearchAppBar() {
   );
 }
 
+// style
 const StyledBox = styled(Box)`
   flexgrow: 1;
 `;
